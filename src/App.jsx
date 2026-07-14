@@ -5,13 +5,19 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import AddLabEntry from './components/AddLabEntry'
+import ViewAll from './components/ViewAll'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-     <AddLabEntry/>
+    <BrowserRouter>
+    <Routes>
+<Route path='/' element={<AddLabEntry/>} />
+<Route path='/view' element={<ViewAll/>} />
+    </Routes>
+  </BrowserRouter>
     </>
   )
 }
